@@ -600,39 +600,3 @@ footer {
         text-align: center; /* Texto centrado */
     }
 }
-
-/* Estilos generales del título */
-.titulo-disponibles {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    color: white; /* Color del texto */
-    background-color: rgb(236, 168, 23); /* Color del fondo, puedes cambiarlo */
-    padding: 10px 20px;
-    display: inline-block;
-    border-radius: 10px;
-    position: relative;
-}
-
-/* Pseudo-elemento para la línea decorativa */
-.titulo-disponibles::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: white; /* Color de la línea */
-    margin: 5px auto 0;
-    border-radius: 2px;
-}
-
-/* Estilos responsive */
-@media (max-width: 768px) {
-    .titulo-disponibles {
-        background-color: #ebbf45; /* Color diferente en pantallas pequeñas */
-        font-size: 24px;
-    }
-
-    .titulo-disponibles::after {
-        width: 80px; /* Línea más larga en móviles */
-    }
-}
