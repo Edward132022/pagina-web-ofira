@@ -40,8 +40,6 @@ const totalItems = items.length;
 
 // Función para actualizar el carrusel
 function updateCarousel() {
-    const centerIndex = (currentIndex + Math.floor(totalItems / 2)) % totalItems;
-    
     items.forEach((item, index) => {
         item.classList.remove("active");
         let newIndex = (index - currentIndex + totalItems) % totalItems;
@@ -63,3 +61,22 @@ function moveCarousel(direction) {
 
 // Iniciar el carrusel en el centro
 updateCarousel();
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Página cargada con éxito.");
+
+    // Seleccionar todos los productos
+    const productos = document.querySelectorAll(".producto");
+
+    // Aplicar animación de entrada progresiva
+    productos.forEach((producto, index) => {
+        setTimeout(() => {
+            producto.style.opacity = "1";
+            producto.style.transform = "translateY(0)";
+        }, index * 200); // Retraso progresivo en la animación
+    });
+});
+// Función para redirigir a otra página
+function irAPagina() {
+    window.location.href = "otra-pagina.html"; // Reemplázalo con tu URL destino
+}

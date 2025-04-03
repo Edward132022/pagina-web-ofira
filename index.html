@@ -50,68 +50,106 @@
     </nav>
 
     <!-- CARRUSEL -->
-    <div class="carousel">
-        <div class="carousel-slide">
-            <div class="slide" style="background-image: url('imagenes/nosotros.png');">
-                <h2>Nosotros</h2>
-            </div>
-            <div class="slide" style="background-image: url('imagenes/cueros.png');">
-                <h2>Cuero</h2>
-            </div>
-            <div class="slide" style="background-image: url('imagenes/tejidos.png');">
-                <h2>Tejidos</h2>
-            </div>
-            <div class="slide" style="background-image: url('imagenes/personaliza.png');">
-                <h2>Personaliza</h2>
-            </div>
-            <div class="slide" style="background-image: url('imagenes/promociones.png');">
-                <h2>Promociones</h2>
-            </div>
+<div class="carousel">
+    <div class="carousel-slide">
+        <div class="slide" style="background-image: url('imagenes/nosotros.png');" onclick="location.href='nosotros.html';">
+            <h2>Nosotros</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/cueros.png');" onclick="location.href='cuero.html';">
+            <h2>Cuero</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/tejidos.png');" onclick="location.href='tejidos.html';">
+            <h2>Tejidos</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/personaliza.png');" onclick="location.href='personalizar.html';">
+            <h2>Personaliza</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/promociones.png');" onclick="location.href='promociones.html';">
+            <h2>Promociones</h2>
         </div>
     </div>
-    <section class="product-carousel">
-        <h2 class="carousel-title">Ofertas en Grande</h2>
-        <div class="carousel-wrapper">
-            <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="carousel-item" onclick="window.location.href='producto1.html'">
-                        <img src="imagenes/cuero_marron.png" alt="Producto 1">
-                        <h3>Pulsera de cuero</h3>
-                        <p class="product-description">Hermosa pulsera de cuero con relieve de hoja unisex</p>
-                    </div>
-                    <div class="carousel-item" onclick="window.location.href='producto2.html'">
-                        <img src="imagenes/tejida_negra.png" alt="Producto 2">
-                        <h3>Pilsera tejida</h3>
-                        <p class="product-description">Hermosa pulsera trenzada con hilo negro y dije con la letra “A”</p>
-                    </div>
-                    <div class="carousel-item" onclick="window.location.href='producto3.html'">
-                        <img src="imagenes/cuero_cruz.png" alt="Producto 3">
-                        <h3>Pulsera de cuero</h3>
-                        <p class="product-description">Hermosa pulsera de cuero con relieve de cruz unisex</p>
-                    </div>
-                    <div class="carousel-item" onclick="window.location.href='producto4.html'">
-                        <img src="imagenes/tejida_roja.png" alt="Producto 4">
-                        <h3>Pulsera tejida</h3>
-                        <p class="product-description">Hermosa pulsera trenzada con hilo rojo con dijes circulares color oro unisex</p>
-                    </div>
-                    <div class="carousel-item" onclick="window.location.href='producto5.html'">
-                        <img src="imagenes/tejida_verde.png" alt="Producto 5">
-                        <h3>Pulsera tejida</h3>
-                        <p class="product-description">Hermosa pulsera trenzada con hilo verde con dijes circulares color oro unisex</p>
-                    </div>
-                    <div class="carousel-item" onclick="window.location.href='producto6.html'">
-                        <img src="imagenes/cuero_negro.png" alt="Producto 6">
-                        <h3>Pulsera de cuero</h3>
-                        <p class="product-description">Hermosa pulsera de cuero con relieve unisex</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+</div>
+
+  <!-- Contenido principal -->
+  <main>
+    <h2 class="titulo">Ofertas de Hoy</h2>
+    <section class="productos-grid">
+        <!-- Producto 1 -->
+        
+        <div class="producto">
+            <img src="imagenes/tejida_negra.png" alt="Pulsera Tejida Negra">
+            <a href="promociones.html">Pulsera Tejida Negra</a>
+            <p class="precio">COP 18.000</p>
+            <p class="descuento">Antes: COP 20.000</p>
         </div>
+        <!-- Producto 2 -->
+        <div class="producto">
+            <img src="imagenes/cuero_marron.png" alt="Producto genérico">
+            <a href="promociones.html">Pulsera de cuero Marron</a>
+            <p class="precio">COP 25.000</p>
+            <p class="descuento">Antes: COP 30.000</p>
+           
+        </div>
+        <!-- Producto 3 -->
+        <div class="producto">
+            <img src="imagenes/tejida_roja.png" alt="Pulsera tejida roja">
+            <a href="promociones.html">Pulsera tejida Roja</a>
+            <p class="precio">COP 25.000</p>
+            <p class="descuento">Antes: COP 35.000</p>
+          
+        </div>
+        <!-- Se pueden agregar más productos aquí -->
     </section>
+</main>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banner Estático</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Banner con efecto y enlace -->
+<div class="banner" onclick="irAPagina()">
+    <div class="slide" style="background-image: url('imagenes/promociones.png');">
+    <div class="overlay">
+        <span class="ver-mas">Ver más</span>
+    </div>
+</div>
+   
+
+    <footer>
+        <!-- Contenedor principal del footer -->
+        <div class="footer-container">
+            
+            <!-- Sección "Acerca" con un título y un enlace -->
+            <div class="footer-section">
+                <h3>ACERCA</h3>
+                <a href="nosotros.html">Nosotros</a>
+            </div>
     
-    <!-- JS -->
-    <script src="script.js"></script>
+            <!-- Sección "Comprar" con un título y varios enlaces -->
+            <div class="footer-section">
+                <h3>COMPRAR</h3>
+                <a href="cuero.html">Cuero</a>
+                <a href="tejidas.html">Tejidas</a>
+                <a href="personalizar.html">Personalizar</a>
+            </div>
+    
+            <!-- Sección "Usuario" con un título y enlaces de cuenta -->
+            <div class="footer-section">
+                <h3>USUARIO</h3>
+                <a href="mi-cuenta.html">Mi cuenta</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    
+        <!-- Texto de derechos reservados en la parte inferior -->
+        <div class="footer-bottom">
+            <p>© Ophira Creations. Todos los derechos reservados</p>
+        </div>
+
+     </footer>
+     <!-- JS -->
+     <script src="script.js"></script>
 </body>
 </html>
