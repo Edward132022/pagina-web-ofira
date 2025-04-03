@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofira</title>
+
+    <!-- Importar la fuente DM Serif Display -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor del menú -->
+    <nav class="menu">
+        <a href="index.html" class="logo">
+            <img src="imagenes/logo.png" alt="Logo">
+        </a>
+
+        <!-- Menú hamburguesa -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <!-- Enlaces de navegación -->
+        <ul class="nav-links">
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="cuero.html">Cuero</a></li>
+            <li><a href="tejido.html">Tejido</a></li>
+            <li><a href="personaliza.html">Personaliza</a></li>
+        </ul>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <button>
+            
+                <img src="imagenes/buscar.png" alt="Buscar">
+               
+            </button>
+        </div>
+
+        <!-- Íconos de usuario y carrito -->
+        <div class="icons">
+            <a href="registro.html"><img src="imagenes/user.png" alt="Usuario"></a>
+            <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+    
+   <!-- JS -->
+   <script src="script.js"></script>
+</body>
+</html>
