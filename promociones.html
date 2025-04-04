@@ -50,37 +50,24 @@
         </div>
     </nav>
 
-    <!-- CARRUSEL -->
-    <!-- CARRUSEL -->
-<div class="carousel">
-    <div class="carousel-slide">
-        <div class="slide" style="background-image: url('imagenes/nosotros.png');" onclick="location.href='nosotros.html';">
-            <h2>Nosotros</h2>
-        </div>
-        <div class="slide" style="background-image: url('imagenes/cueros.png');" onclick="location.href='cuero.html';">
-            <h2>Cuero</h2>
-        </div>
-        <div class="slide" style="background-image: url('imagenes/tejidos.png');" onclick="location.href='tejidos.html';">
-            <h2>Tejidos</h2>
-        </div>
-        <div class="slide" style="background-image: url('imagenes/personaliza.png');" onclick="location.href='personalizar.html';">
-            <h2>Personaliza</h2>
-        </div>
-        <div class="slide" style="background-image: url('imagenes/promociones.png');" onclick="location.href='promociones.html';">
-            <h2>Promociones</h2>
-        </div>
+   <!-- Banner con efecto y enlace -->
+<div class="banner" onclick="irAPagina()">
+    <div class="slide" style="background-image: url('imagenes/aprovecha.png');">
+    <div class="overlay">
+        <h2>Promociones</h2>
     </div>
 </div>
 
   <!-- Contenido principal -->
+
   <main>
-    <h2 class="titulo">Ofertas de Hoy</h2>
+    <h2 class="titulo-disponibles">Descuentos disponibles</h2>
     <section class="productos-grid">
         <!-- Producto 1 -->
         
         <div class="producto">
-            <img src="imagenes/tejida_negra.png" alt="Pulsera Tejida Negra">
-            <a href="promociones.html">Pulsera Tejida Negra</a>
+            <img src="imagenes/cuero_cruz.png" alt="Pulsera Tejida Negra">
+            <a href="promociones.html">Pulsera cuero cruz</a>
             <p class="precio">COP 18.000</p>
             <p class="descuento">Antes: COP 20.000</p>
         </div>
@@ -94,8 +81,8 @@
         </div>
         <!-- Producto 3 -->
         <div class="producto">
-            <img src="imagenes/tejida_roja.png" alt="Pulsera tejida roja">
-            <a href="promociones.html">Pulsera tejida Roja</a>
+            <img src="imagenes/cuero_negro.png" alt="Pulsera tejida roja">
+            <a href="promociones.html">Pulsera cuero negro</a>
             <p class="precio">COP 28.000</p>
             <p class="descuento">Antes: COP 35.000</p>
           
@@ -110,13 +97,12 @@
 </head>
 <body>
 
-<!-- Banner con efecto y enlace -->
-<div class="banner" onclick="location.href='promociones.html';">
-    <div class="slide" style="background-image: url('imagenes/promociones.png');">
-    <div class="overlay">
-        <span class="ver-mas">Ver más</span>
+    <div class="banner" onclick="irAPagina()">
+        <div class="slide" style="background-image: url('imagenes/box.png');">
+        <div class="overlay">
+            <h2>Slelccionar</h2>
+        </div>
     </div>
-</div>
    
 
     <footer>
@@ -149,8 +135,10 @@
         <div class="footer-bottom">
             <p>© Ophira Creations. Todos los derechos reservados</p>
         </div>
-    </footer>
-    <!--jvs-->>
-    <script src="script.js"></script> <!-- Enlace al archivo JavaScript -->
+
+     </footer>
+
+     <!-- JS -->
+     <script src="script.js"></script>
 </body>
 </html>
