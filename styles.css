@@ -600,3 +600,177 @@ footer {
         text-align: center; /* Texto centrado */
     }
 }
+/* Contenedor de los productos */
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Diseño responsive */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.fotos{
+    width: 200px; /* Tamaño uniforme del contenedor */
+    padding: 15px;
+    border: 3px solid hsl(198, 82%, 85%);
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center;
+    background-color: rgb(200, 237, 249);
+}
+.fotos img {
+    width: 200px; /* Asegura que la imagen no se salga */
+    height: 200px; /* Mantiene la proporción */
+    object-fit: cover; /* Evita que las imágenes se deformen */
+    border-radius: 10px; /* Opcional, para esquinas redondeadas */
+}
+.textname {
+    color: hwb(265 0% 80%); /* Rojo llamativo */
+    font-size: 20px;
+    margin-top: 5px;
+}
+.textt {
+    color: hwb(265 0% 80%); /* Rojo llamativo */
+    font-size: 15px;
+    margin-top: 5px;
+}
+/* Sección "¿Por qué empezó?" */
+.why-started {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px; 
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.why-started h2 {
+    font-size: 32px; 
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+
+.why-started p {
+    font-size: 18px; 
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Estilo del botón "Volver a la página principal" */
+.btn-volver {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5b4fff;
+    padding: 15px 25px; 
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    font-size: 18px;
+}
+
+.btn-volver:hover {
+    background-color: #4237d1;
+}
+
+/* Estilos generales del título */
+.titulo-disponibles {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white; /* Color del texto */
+    background-color: rgb(39, 189, 169); /* Color del fondo, puedes cambiarlo */
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Pseudo-elemento para la línea decorativa */
+.titulo-disponibles::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: white; /* Color de la línea */
+    margin: 5px auto 0;
+    border-radius: 2px;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .titulo-disponibles {
+        background-color: #41ccd5; /* Color diferente en pantallas pequeñas */
+        font-size: 24px;
+    }
+
+    .titulo-disponibles::after {
+        width: 80px; /* Línea más larga en móviles */
+    }
+}
+/* Sección de información para personalizar */
+.info-personaliza {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 3rem;
+    background-color: #f9f9f9; /* Fondo suave */
+  }
+  
+  .info-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .info-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .info-text {
+    flex: 1;
+    font-family: 'DM Serif Display', serif;
+    color: #333;
+  }
+  
+  .info-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .info-text p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .info-text .final-line {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #a42ffd; /* Color destacado */
+  }
+  
+  /* Estilos para el botón de personalización */
+  .btn-personaliza {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #9b59b6, #e91e63);
+    color: #fff;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-personaliza:hover {
+    background: linear-gradient(45deg, #8e44ad, #d81b60);
+  }
+  
