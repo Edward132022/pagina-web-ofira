@@ -77,6 +77,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 // Función para redirigir a otra página
-function irAPagina() {
-    window.location.href = "otra-pagina.html"; // Reemplázalo con tu URL destino
+function irApromo() {
+    window.location.href = "promociones.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irAcueros() {
+    window.location.href = "cuero.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irAus() {
+    window.location.href = "nosotros.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irATej() {
+    window.location.href = "tejido.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irAPer() {
+    window.location.href = "personaliza.html"; // Reemplázalo con tu URL destino
 }
