@@ -708,3 +708,69 @@ footer {
         width: 80px; /* Línea más larga en móviles */
     }
 }
+/* Sección de información para personalizar */
+.info-personaliza {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 3rem;
+    background-color: #f9f9f9; /* Fondo suave */
+  }
+  
+  .info-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .info-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .info-text {
+    flex: 1;
+    font-family: 'DM Serif Display', serif;
+    color: #333;
+  }
+  
+  .info-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .info-text p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .info-text .final-line {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #a42ffd; /* Color destacado */
+  }
+  
+  /* Estilos para el botón de personalización */
+  .btn-personaliza {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #9b59b6, #e91e63);
+    color: #fff;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-personaliza:hover {
+    background: linear-gradient(45deg, #8e44ad, #d81b60);
+  }
+  
