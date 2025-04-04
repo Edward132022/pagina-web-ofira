@@ -37,9 +37,7 @@
         <div class="search-box">
             <input type="text" placeholder="Buscar...">
             <button>
-            
                 <img src="imagenes/buscar.png" alt="Buscar">
-               
             </button>
         </div>
 
@@ -50,95 +48,72 @@
         </div>
     </nav>
 
-   <!-- Banner con efecto y enlace -->
-<div class="banner" onclick="irAus()">
-    <div class="slide" style="background-image: url('imagenes/nosotros.png');">
-    <div class="overlay">
-        <h2>Nosotros</h2>
+    <!-- Primer banner con efecto y enlace -->
+    <div class="banner" onclick="irAper()">
+        <div class="slide" style="background-image: url('imagenes/personaliza.png');">
+            <div class="overlay">
+                <h2>Personaliza</h2>
+            </div>
+        </div>
     </div>
-</div>
 
-  <!-- Contenido principal -->
- 
-  <main>
-    <h2 class="titulo-disponibles">Nosotros</h2>
-    <section class="images-grid">
-        <!-- Miembro 1 -->
-        
-        <div class="fotos">
-            <img src="imagenes/sofia.JPG" alt="sofia">
-            <p class="textname">Sofia Alvarez</p>
-            <p class="textt">Cofundadora</p>
-        </div>
-        
-        <!-- Miembro 2 -->
-        <div class="fotos">
-            <img src="imagenes/fabian.jpg" alt="fabian">
-            <p class="textname">Fabian Gonzalez</p>
-            <p class="textt">Cofundador</p>
-        </div>
-        <!-- Miembro 3 -->
-        <div class="fotos">
-            <img src="imagenes/edward.jpg" alt="edward">
-            <p class="textname">Edward Garcia</p>
-            <p class="textt">Cofundador</p>
-        </div>
-        <!-- Se pueden agregar más productos aquí -->
-    </section>
-</main>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Banner Estático</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <!-- Contenido principal -->
+    <main>
+        <h2 class="titulo-disponibles">¡Personaliza Fácil!</h2>
+        <section class="productos-grid">
+            <!-- Aquí irían tus productos si los tuvieras listados -->
+        </section>
+    </main>
 
-<!-- Sección de "¿Por qué empezó?" -->
-<section class="why-started">
-    <h2>¿Por qué empezó?</h2>
-    <p>
-        Ophira Creations empezó por el impulso de tres amigos que, siguiendo sus aspiraciones, 
-        crearon un emprendimiento de accesorios accesible para personas como ellos, jóvenes, 
-        con poca adquisición monetaria y que deseen accesorios de calidad.
-    </p>
-    <a href="index.html" class="btn-volver">Volver a la página principal</a>
-</section>
-
-   
-
+    <!-- NUEVA SECCIÓN: Imagen a la izquierda y texto a la derecha -->
+<section class="info-personaliza">
+    <div class="info-container">
+      <div class="info-image">
+        <!-- Ajusta la ruta de la imagen según tu carpeta -->
+        <img src="imagenes/personaliza_facil.png" alt="Pulseras personalizadas">
+      </div>
+      <div class="info-text">
+        <h2>¡Diseña tu pulsera única con Ophira Creations!</h2>
+        <p><strong>1.</strong> Elige la base que más te guste.</p>
+        <p><strong>2.</strong> Decide si quieres charms o no; ¡todo está a tu disposición!</p>
+        <p><strong>3.</strong> Escoge el color perfecto para tu pulsera.</p>
+        <p class="final-line">¡Y listo! En pocos pasos tendrás una pulsera única y totalmente personalizada.</p>
+        <!-- Botón para ir a la personalización directa -->
+        <a href="personalizacion.html" class="btn-personaliza">Personaliza Ahora</a>
+      </div>
+    </div>
+  </section>
+  <!-- Fin de la NUEVA SECCIÓN -->
+  
     <footer>
         <!-- Contenedor principal del footer -->
         <div class="footer-container">
-            
-            <!-- Sección "Acerca" con un título y un enlace -->
+            <!-- Sección "Acerca" -->
             <div class="footer-section">
                 <h3>ACERCA</h3>
                 <a href="nosotros.html">Nosotros</a>
             </div>
-    
-            <!-- Sección "Comprar" con un título y varios enlaces -->
+            <!-- Sección "Comprar" -->
             <div class="footer-section">
                 <h3>COMPRAR</h3>
                 <a href="cuero.html">Cuero</a>
                 <a href="tejidas.html">Tejidas</a>
                 <a href="personalizar.html">Personalizar</a>
             </div>
-    
-            <!-- Sección "Usuario" con un título y enlaces de cuenta -->
+            <!-- Sección "Usuario" -->
             <div class="footer-section">
                 <h3>USUARIO</h3>
                 <a href="mi-cuenta.html">Mi cuenta</a>
                 <a href="login.html">Login</a>
             </div>
         </div>
-    
-        <!-- Texto de derechos reservados en la parte inferior -->
+        <!-- Derechos reservados -->
         <div class="footer-bottom">
             <p>© Ophira Creations. Todos los derechos reservados</p>
         </div>
+    </footer>
 
-     </footer>
-     <!-- JS -->
-     <script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
 </body>
 </html>
