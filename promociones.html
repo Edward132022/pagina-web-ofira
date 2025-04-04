@@ -51,37 +51,41 @@
     </nav>
 
    <!-- Banner con efecto y enlace -->
-<div class="banner" onclick="irAus()">
-    <div class="slide" style="background-image: url('imagenes/nosotros.png');">
+<div class="banner" onclick="irAPagina()">
+    <div class="slide" style="background-image: url('imagenes/aprovecha.png');">
     <div class="overlay">
-        <h2>Nosotros</h2>
+        <h2>Promociones</h2>
     </div>
 </div>
 
   <!-- Contenido principal -->
- 
+
   <main>
-    <h2 class="titulo-disponibles">Nosotros</h2>
-    <section class="images-grid">
-        <!-- Miembro 1 -->
+    <h2 class="titulo-disponibles">Descuentos disponibles</h2>
+    <section class="productos-grid">
+        <!-- Producto 1 -->
         
-        <div class="fotos">
-            <img src="imagenes/sofia.JPG" alt="sofia">
-            <p class="textname">Sofia Alvarez</p>
-            <p class="textt">Cofundadora</p>
+        <div class="producto">
+            <img src="imagenes/cuero_cruz.png" alt="Pulsera Tejida Negra">
+            <a href="promociones.html">Pulsera cuero cruz</a>
+            <p class="precio">COP 18.000</p>
+            <p class="descuento">Antes: COP 20.000</p>
         </div>
-        
-        <!-- Miembro 2 -->
-        <div class="fotos">
-            <img src="imagenes/fabian.jpg" alt="fabian">
-            <p class="textname">Fabian Gonzalez</p>
-            <p class="textt">Cofundador</p>
+        <!-- Producto 2 -->
+        <div class="producto">
+            <img src="imagenes/cuero_marron.png" alt="Producto genérico">
+            <a href="promociones.html">Pulsera de cuero Marron</a>
+            <p class="precio">COP 25.000</p>
+            <p class="descuento">Antes: COP 30.000</p>
+           
         </div>
-        <!-- Miembro 3 -->
-        <div class="fotos">
-            <img src="imagenes/edward.jpg" alt="edward">
-            <p class="textname">Edward Garcia</p>
-            <p class="textt">Cofundador</p>
+        <!-- Producto 3 -->
+        <div class="producto">
+            <img src="imagenes/cuero_negro.png" alt="Pulsera tejida roja">
+            <a href="promociones.html">Pulsera cuero negro</a>
+            <p class="precio">COP 28.000</p>
+            <p class="descuento">Antes: COP 35.000</p>
+          
         </div>
         <!-- Se pueden agregar más productos aquí -->
     </section>
@@ -93,17 +97,12 @@
 </head>
 <body>
 
-<!-- Sección de "¿Por qué empezó?" -->
-<section class="why-started">
-    <h2>¿Por qué empezó?</h2>
-    <p>
-        Ophira Creations empezó por el impulso de tres amigos que, siguiendo sus aspiraciones, 
-        crearon un emprendimiento de accesorios accesible para personas como ellos, jóvenes, 
-        con poca adquisición monetaria y que deseen accesorios de calidad.
-    </p>
-    <a href="index.html" class="btn-volver">Volver a la página principal</a>
-</section>
-
+    <div class="banner" onclick="irAPagina()">
+        <div class="slide" style="background-image: url('imagenes/box.png');">
+        <div class="overlay">
+            <h2>Slelccionar</h2>
+        </div>
+    </div>
    
 
     <footer>
@@ -138,6 +137,7 @@
         </div>
 
      </footer>
+
      <!-- JS -->
      <script src="script.js"></script>
 </body>

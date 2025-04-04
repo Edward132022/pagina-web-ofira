@@ -30,6 +30,7 @@
             <li><a href="cuero.html">Cuero</a></li>
             <li><a href="tejido.html">Tejido</a></li>
             <li><a href="personaliza.html">Personaliza</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
         </ul>
 
         <!-- Barra de búsqueda -->
@@ -50,26 +51,27 @@
     </nav>
 
     <!-- CARRUSEL -->
-    <div class="carousel">
-        <div class="carousel-slide">
-            <div class="slide" style="background-image: url('imagenes/nosotros.png');">
-                <h2>Nosotros</h2>
-
-            </div>
-            <div class="slide" style="background-image: url('imagenes/cueros.png');">
-                <h2>Cuero</h2>
-            </div>
-            <div class="slide" style="background-image: url('imagenes/tejidos.png');">
-                <h2>Tejidos</h2>
-            </div>
-            <div class="slide" style="background-image: url('imagenes/personaliza.png');">
-                <h2>Personaliza</h2>
-            </div>
-            <div class="slide" style="background-image: url('imagenes/promociones.png');">
-                <h2>Promociones</h2>
-            </div>
+    <!-- CARRUSEL -->
+<div class="carousel">
+    <div class="carousel-slide">
+        <div class="slide" style="background-image: url('imagenes/nosotros.png');" onclick="location.href='nosotros.html';">
+            <h2>Nosotros</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/cueros.png');" onclick="location.href='cuero.html';">
+            <h2>Cuero</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/tejidos.png');" onclick="location.href='tejidos.html';">
+            <h2>Tejidos</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/personaliza.png');" onclick="location.href='personalizar.html';">
+            <h2>Personaliza</h2>
+        </div>
+        <div class="slide" style="background-image: url('imagenes/promociones.png');" onclick="location.href='promociones.html';">
+            <h2>Promociones</h2>
         </div>
     </div>
+</div>
+
   <!-- Contenido principal -->
   <main>
     <h2 class="titulo">Ofertas de Hoy</h2>
@@ -94,7 +96,7 @@
         <div class="producto">
             <img src="imagenes/tejida_roja.png" alt="Pulsera tejida roja">
             <a href="promociones.html">Pulsera tejida Roja</a>
-            <p class="precio">COP 25.000</p>
+            <p class="precio">COP 28.000</p>
             <p class="descuento">Antes: COP 35.000</p>
           
         </div>
@@ -109,7 +111,10 @@
 <body>
 
 <!-- Banner con efecto y enlace -->
-<div class="banner" onclick="irApromo()">
+
+<div class="banner" onclick="location.href='promociones.html';">
+
+
     <div class="slide" style="background-image: url('imagenes/promociones.png');">
     <div class="overlay">
         <span class="ver-mas">Ver más</span>
@@ -148,6 +153,7 @@
             <p>© Ophira Creations. Todos los derechos reservados</p>
         </div>
     </footer>
+    <!--jvs-->>
     <script src="script.js"></script> <!-- Enlace al archivo JavaScript -->
 </body>
 </html>
