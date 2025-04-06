@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito - Ofira Creations</title>
+  
+  <!-- Importar la fuente DM Serif Display (ya se usa en index.html) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  
+  <!-- Enlace a tu archivo CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Estilos inline para ajustar el margen superior del contenido -->
+  <style>
+    /* Aseguramos que el contenido no se corte por el header fijo */
+    .carrito-contenido {
+      margin-top: 120px; /* Ajusta este valor según la altura de tu header */
+    }
+    /* Estilos para el carrito vacío */
+    .carrito-vacio {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border: 1px solid #ccc;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 500px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .carrito-vacio h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .carrito-vacio .total {
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menú de navegación (mismo código que en tu index.html) -->
+  <nav class="menu">
+    <a href="index.html" class="logo">
+      <img src="imagenes/logo.png" alt="Logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+    <ul class="nav-links">
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="cuero.html">Cuero</a></li>
+      <li><a href="tejido.html">Tejido</a></li>
+      <li><a href="personaliza.html">Personaliza</a></li>
+      <li><a href="promociones.html">Promociones</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar...">
+      <button>
+        <img src="imagenes/buscar.png" alt="Buscar">
+      </button>
+    </div>
+    <div class="icons">
+      <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+      <!-- Este enlace nos lleva a carrito.html -->
+      <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+    </div>
+  </nav>
+
+  <!-- Contenido del Carrito -->
+  <section class="carrito-contenido">
+    <!-- Contenedor para el producto -->
+    <div id="productos">
+      <div class="carrito-item">
+        <img src="imagenes/tejida_verde.png" alt="Pulsera tejida verde" class="carrito-imagen">
+        <div class="carrito-descripcion">
+          <h3>Pulsera tejida verde</h3>
+          <p>Descripción: Pulsera tejida con hilos de color verde, ajustable y resistente.</p>
+          <p>Precio: $10.00</p>
+          <button class="btn-eliminar">Eliminar</button>
+        </div>
+      </div>
+      <div class="carrito-total">
+        <span>Total:</span>
+        <span id="total">$10.00</span>
+      </div>
+      <div class="carrito-botones">
+        <button class="btn-atras" id="seguirComprando">Seguir comprando</button>
+        <button class="btn-comprar" id="comprar">Comprar</button>
+      </div>
+    </div>
+
+    <!-- Vista cuando el carrito está vacío -->
+    <div class="carrito-vacio" id="carritoVacio">
+      <h2>No hay nada en tu carrito</h2>
+      <p class="total">$0</p>
+      <button class="btn-atras" id="seguirComprandoVacio">Seguir comprando</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ACERCA</h3>
+        <a href="nosotros.html">Nosotros</a>
+      </div>
+      <div class="footer-section">
+        <h3>COMPRAR</h3>
+        <a href="cuero.html">Cuero</a>
+        <a href="tejido.html">Tejidos</a>
+        <a href="personaliza.html">Personaliza</a>
+      </div>
+      <div class="footer-section">
+        <h3>USUARIO</h3>
+        <a href="mi_cuenta.html">Mi cuenta</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Ofira Creations. Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Función para el menú hamburguesa
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+
+    // Esperamos a que se cargue el DOM
+    document.addEventListener("DOMContentLoaded", function() {
+      const btnEliminar = document.querySelector(".btn-eliminar");
+      const productos = document.getElementById("productos");
+      const carritoVacio = document.getElementById("carritoVacio");
+      const btnSeguirComprando = document.getElementById("seguirComprando");
+      const btnSeguirComprandoVacio = document.getElementById("seguirComprandoVacio");
+      const btnComprar = document.getElementById("comprar");
+      
+      // Eliminar producto y mostrar carrito vacío
+      btnEliminar.addEventListener("click", function() {
+        // Elimina el contenedor de productos
+        productos.style.display = "none";
+        // Muestra el mensaje de carrito vacío
+        carritoVacio.style.display = "flex";
+      });
+      
+      // Redirige al pulsar "Seguir comprando" (en ambas vistas) a la página principal
+      btnSeguirComprando.addEventListener("click", function() {
+        window.location.href = "index.html";
+      });
+      btnSeguirComprandoVacio.addEventListener("click", function() {
+        window.location.href = "index.html";
+      });
+      
+      // Redirige al pulsar "Comprar" a la página compra.html
+      btnComprar.addEventListener("click", function() {
+        window.location.href = "compra.html";
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

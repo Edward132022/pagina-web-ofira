@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación - Ofira Creations</title>
+  
+  <!-- Importar la fuente DM Serif Display -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  
+  <!-- Enlace a tu archivo CSS principal -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Estilos inline específicos para la página de confirmación -->
+  <style>
+    .confirmacion-contenido {
+      margin-top: 120px; /* Ajuste para evitar que se corte por el header */
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    .confirmacion-contenido h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .confirmacion-contenido p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn-volver {
+      padding: 0.8rem 1.2rem;
+      background-color: #a104c6;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .btn-volver:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="menu">
+    <a href="index.html" class="logo">
+      <img src="imagenes/logo.png" alt="Logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="cuero.html">Cuero</a></li>
+      <li><a href="tejido.html">Tejido</a></li>
+      <li><a href="personaliza.html">Personaliza</a></li>
+      <li><a href="promociones.html">Promociones</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar...">
+      <button>
+        <img src="imagenes/buscar.png" alt="Buscar">
+      </button>
+    </div>
+    <div class="icons">
+      <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+      <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+    </div>
+  </nav>
+
+  <!-- Contenido de confirmación -->
+  <section class="confirmacion-contenido">
+    <h1>¡Compra Confirmada!</h1>
+    <p>Gracias por tu compra. Tu pedido ha sido recibido y se está procesando.<br>
+       Recibirás un correo electrónico con los detalles y el seguimiento de tu pedido.</p>
+    <img src="imagenes/tejida_verde.png" alt="Pulsera tejida verde" style="max-width: 200px; margin-bottom: 1rem;">
+    <br>
+    <a href="index.html" class="btn-volver">Volver a la tienda</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ACERCA</h3>
+        <a href="nosotros.html">Nosotros</a>
+      </div>
+      <div class="footer-section">
+        <h3>COMPRAR</h3>
+        <a href="cuero.html">Cuero</a>
+        <a href="tejido.html">Tejidos</a>
+        <a href="personaliza.html">Personaliza</a>
+      </div>
+      <div class="footer-section">
+        <h3>USUARIO</h3>
+        <a href="mi_cuenta.html">Mi cuenta</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Ofira Creations. Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
