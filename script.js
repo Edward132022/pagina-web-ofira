@@ -96,3 +96,6 @@ function irATej() {
 function irAPer() {
     window.location.href = "personaliza.html"; // Reemplázalo con tu URL destino
 }
+function irAbox() {
+    window.location.href = "preview_box.html"; // Reemplázalo con tu URL destino
+}
