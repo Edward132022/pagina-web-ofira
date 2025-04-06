@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colores - Ofira Creations</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { padding-top: 120px; }
+    .colores-contenido { text-align: center; max-width: 800px; margin: 0 auto; padding: 2rem; }
+    .opciones { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .opcion {
+      border: 1px solid #ccc; border-radius: 8px; padding: 1rem;
+      width: 150px; cursor: pointer; transition: transform .2s;
+      text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;
+    }
+    .opcion:hover { transform: scale(1.05); }
+    .opcion img { max-width: 100%; border-radius: 4px; margin-bottom: .5rem; }
+    .opcion h3 { font-size: 1rem; margin: 0; text-transform: capitalize; }
+  </style>
+</head>
+<body>
+  <nav class="menu">…</nav>
+
+  <section class="colores-contenido">
+    <h1>Elige el Color</h1>
+    <div class="opciones" id="opcionesColores"></div>
+  </section>
+
+  <script>
+    function toggleMenu(){ document.querySelector('.nav-links').classList.toggle('active'); }
+    document.addEventListener('DOMContentLoaded', () => {
+      const p = new URLSearchParams(window.location.search);
+      const tipo = p.get('tipo');
+      const charm = p.get('charm');
+      const cont = document.getElementById('opcionesColores');
+
+      // Definimos colores según base (tipo) y charm, o bien siempre los mismos:
+      let colores = [];
+      if (tipo === 'hilo') colores = ['rojo','negro'];
+      else colores = ['negro'];
+
+      colores.forEach(color => {
+        const a = document.createElement('a');
+        a.className = 'opcion';
+        a.innerHTML = `
+          <img src="imagenes/tejida_verde.png" alt="${color}">
+          <h3>${color}</h3>
+        `;
+        a.href = `charms_color.html?tipo=${tipo}&charm=${charm}&color=${color}`;
+        cont.appendChild(a);
+      });
+    });
+  </script>
+</body>
+</html>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ACERCA</h3>
+        <a href="nosotros.html">Nosotros</a>
+      </div>
+      <div class="footer-section">
+        <h3>COMPRAR</h3>
+        <a href="cuero.html">Cuero</a>
+        <a href="tejido.html">Tejidos</a>
+        <a href="personaliza.html">Personaliza</a>
+      </div>
+      <div class="footer-section">
+        <h3>USUARIO</h3>
+        <a href="mi_cuenta.html">Mi cuenta</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Ofira Creations. Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Función para el menú hamburguesa
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+
+    // Esperamos a que se cargue el DOM
+    document.addEventListener("DOMContentLoaded", function() {
+      const btnEliminar = document.querySelector(".btn-eliminar");
+      const productos = document.getElementById("productos");
+      const carritoVacio = document.getElementById("carritoVacio");
+      const btnSeguirComprando = document.getElementById("seguirComprando");
+      const btnSeguirComprandoVacio = document.getElementById("seguirComprandoVacio");
+      const btnComprar = document.getElementById("comprar");
+      
+      // Eliminar producto y mostrar carrito vacío
+      btnEliminar.addEventListener("click", function() {
+        // Elimina el contenedor de productos
+        productos.style.display = "none";
+        // Muestra el mensaje de carrito vacío
+        carritoVacio.style.display = "flex";
+      });
+      
+      // Redirige al pulsar "Seguir comprando" (en ambas vistas) a la página principal
+      btnSeguirComprando.addEventListener("click", function() {
+        window.location.href = "index.html";
+      });
+      btnSeguirComprandoVacio.addEventListener("click", function() {
+        window.location.href = "index.html";
+      });
+      
+      // Redirige al pulsar "Comprar" a la página compra.html
+      btnComprar.addEventListener("click", function() {
+        window.location.href = "compra.html";
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
