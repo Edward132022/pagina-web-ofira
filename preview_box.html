@@ -1,115 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofira</title>
-
-    <!-- Importar la fuente DM Serif Display -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-
-    <!-- Enlace al archivo CSS -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Producto - Ophira</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <!-- Contenedor del menú -->
-    <nav class="menu">
-        <a href="index.html" class="logo">
-            <img src="imagenes/logo.png" alt="Logo">
-        </a>
+   <!-- Contenedor del menú -->
+   <nav class="menu">
+    <a href="index.html" class="logo">
+        <img src="imagenes/logo.png" alt="Logo">
+    </a>
 
-        <!-- Menú hamburguesa -->
-        <div class="hamburger" onclick="toggleMenu()">
-            ☰
-        </div>
+    <!-- Menú hamburguesa -->
+    <div class="hamburger" onclick="toggleMenu()">
+        ☰
+    </div>
 
-        <!-- Enlaces de navegación -->
-        <ul class="nav-links">
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="cuero.html">Cuero</a></li>
-            <li><a href="tejido.html">Tejido</a></li>
-            <li><a href="personaliza.html">Personaliza</a></li>
-            <li><a href="promociones.html">Promociones</a></li>
-        </ul>
+    <!-- Enlaces de navegación -->
+    <ul class="nav-links">
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="cuero.html">Cuero</a></li>
+        <li><a href="tejido.html">Tejido</a></li>
+        <li><a href="personaliza.html">Personaliza</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+    </ul>
 
-        <!-- Barra de búsqueda -->
-        <div class="search-box">
-            <input type="text" placeholder="Buscar...">
-            <button>
-            
-                <img src="imagenes/buscar.png" alt="Buscar">
-               
-            </button>
-        </div>
-
-        <!-- Íconos de usuario y carrito -->
-        <div class="icons">
-            <a href="registro.html"><img src="imagenes/user.png" alt="Usuario"></a>
-            <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
-        </div>
-    </nav>
-
-    <div class="producto-container">
-        <div class="producto-imagen">
-            <img src="imagenes/box.png" alt="Pulsera de cuero con relieve">
-        </div>
-        <div class="producto-detalles">
-          
+    <!-- Barra de búsqueda -->
+    <div class="search-box">
+        <input type="text" placeholder="Buscar...">
+        <button>
+        
+            <img src="imagenes/buscar.png" alt="Buscar">
            
-            
-           
-            <div class="especificaciones">
-                <p class="titulo_p" ></p><h2>Pulsera de cuero con relieve</h2></p>
-                <p class="precio">$20.990</p>
-                <p><strong>Ancho/diámetro:</strong> 22x1cm</p>
-                <p><strong>Posee níquel:</strong> No</p>
-                <p><strong>Material de la pulsera:</strong> Cuero</p>
-                <p><strong>Condición del producto:</strong> Nuevo</p>
-            </div>
-    
-            <div class="botones">
-                <a href="compra.html" class="boton-comprar">Comprar ahora</a>
-                <a href="eliminar.html" class="boton-eliminar">Eliminar</a>
-            </div>
+        </button>
+    </div>
+
+    <!-- Íconos de usuario y carrito -->
+    <div class="icons">
+        <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+        <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+    </div>
+</nav>
+
+  <!-- Espacio en blanco -->
+  <div class="espacio-menu"></div>
+
+  <!-- Contenido del producto -->
+  <div class="producto-container">
+    <div class="producto-imagen">
+      <img src="imagenes/box.png" alt="Imagen del producto" />
+    </div>
+
+    <div class="producto-detalles">
+      <h2>Caja misteriosa</h2>
+      <p class="descripcion">Caja misteriosa con 3 pulceras aleatorias</p>
+      <p class="precio">$20.990</p>
+
+      <div class="especificaciones">
+        <h3>Especificaciones:</h3>
+        <p><strong>Ancho/diámetro:</strong> 22x1cm</p>
+        <p><strong>Posee níquel:</strong> No</p>
+        <p><strong>Material:</strong> Cuero/tejido</p>
+        <p><strong>Condición:</strong> Nuevo</p>
+      </div>
+
+      <div class="acciones">
+        <button class="boton-cantidad" onclick="decrementarCantidad()">-</button>
+        <input type="number" id="cantidad" value="1" min="1" max="5" readonly />
+        <button class="boton-cantidad" onclick="incrementarCantidad()">+</button>
+        <a href="carrito.html" class="agregar-carrito">Agregar al carrito 🛒</a>
+      </div>
+
+      <div class="botones">
+        <a href="compra.html" class="boton-comprar">Comprar ahora</a>
+        <a href="index.html" class="boton-atras">Atrás</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <!-- Contenedor principal del footer -->
+    <div class="footer-container">
+        
+        <!-- Sección "Acerca" con un título y un enlace -->
+        <div class="footer-section">
+            <h3>ACERCA</h3>
+            <a href="nosotros.html">Nosotros</a>
+        </div>
+
+        <!-- Sección "Comprar" con un título y varios enlaces -->
+        <div class="footer-section">
+            <h3>COMPRAR</h3>
+            <a href="cuero.html">Cuero</a>
+            <a href="tejidas.html">Tejidas</a>
+            <a href="personalizar.html">Personalizar</a>
+        </div>
+
+        <!-- Sección "Usuario" con un título y enlaces de cuenta -->
+        <div class="footer-section">
+            <h3>USUARIO</h3>
+            <a href="mi-cuenta.html">Mi cuenta</a>
+            <a href="login.html">Login</a>
         </div>
     </div>
-    
-   
 
-    <footer>
-        <!-- Contenedor principal del footer -->
-        <div class="footer-container">
-            
-            <!-- Sección "Acerca" con un título y un enlace -->
-            <div class="footer-section">
-                <h3>ACERCA</h3>
-                <a href="nosotros.html">Nosotros</a>
-            </div>
-    
-            <!-- Sección "Comprar" con un título y varios enlaces -->
-            <div class="footer-section">
-                <h3>COMPRAR</h3>
-                <a href="cuero.html">Cuero</a>
-                <a href="tejidas.html">Tejidas</a>
-                <a href="personalizar.html">Personalizar</a>
-            </div>
-    
-            <!-- Sección "Usuario" con un título y enlaces de cuenta -->
-            <div class="footer-section">
-                <h3>USUARIO</h3>
-                <a href="mi-cuenta.html">Mi cuenta</a>
-                <a href="login.html">Login</a>
-            </div>
-        </div>
-    
-        <!-- Texto de derechos reservados en la parte inferior -->
-        <div class="footer-bottom">
-            <p>© Ophira Creations. Todos los derechos reservados</p>
-        </div>
+    <!-- Texto de derechos reservados en la parte inferior -->
+    <div class="footer-bottom">
+        <p>© Ophira Creations. Todos los derechos reservados</p>
+    </div>
 
-     </footer>
-     <!-- JS -->
-     <script src="script.js"></script>
+ </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

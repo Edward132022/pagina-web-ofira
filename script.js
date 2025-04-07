@@ -99,3 +99,17 @@ function irAPer() {
 function irAbox() {
     window.location.href = "preview_box.html"; // Reemplázalo con tu URL destino
 }
+function incrementarCantidad() {
+    const input = document.getElementById('cantidad');
+    if (parseInt(input.value) < 5) {
+        input.value = parseInt(input.value) + 1;
+    }
+}
+
+function decrementarCantidad() {
+    const input = document.getElementById('cantidad');
+    if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+    }
+}
+
