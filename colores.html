@@ -28,33 +28,6 @@
     <div class="opciones" id="opcionesColores"></div>
   </section>
 
-  <script>
-    function toggleMenu(){ document.querySelector('.nav-links').classList.toggle('active'); }
-    document.addEventListener('DOMContentLoaded', () => {
-      const p = new URLSearchParams(window.location.search);
-      const tipo = p.get('tipo');
-      const charm = p.get('charm');
-      const cont = document.getElementById('opcionesColores');
-
-      // Definimos colores según base (tipo) y charm, o bien siempre los mismos:
-      let colores = [];
-      if (tipo === 'hilo') colores = ['rojo','negro'];
-      else colores = ['negro'];
-
-      colores.forEach(color => {
-        const a = document.createElement('a');
-        a.className = 'opcion';
-        a.innerHTML = `
-          <img src="imagenes/tejida_verde.png" alt="${color}">
-          <h3>${color}</h3>
-        `;
-        a.href = `charms_color.html?tipo=${tipo}&charm=${charm}&color=${color}`;
-        cont.appendChild(a);
-      });
-    });
-  </script>
-</body>
-</html>
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -87,34 +60,33 @@
       navLinks.classList.toggle('active');
     }
 
-    // Esperamos a que se cargue el DOM
-    document.addEventListener("DOMContentLoaded", function() {
-      const btnEliminar = document.querySelector(".btn-eliminar");
-      const productos = document.getElementById("productos");
-      const carritoVacio = document.getElementById("carritoVacio");
-      const btnSeguirComprando = document.getElementById("seguirComprando");
-      const btnSeguirComprandoVacio = document.getElementById("seguirComprandoVacio");
-      const btnComprar = document.getElementById("comprar");
-      
-      // Eliminar producto y mostrar carrito vacío
-      btnEliminar.addEventListener("click", function() {
-        // Elimina el contenedor de productos
-        productos.style.display = "none";
-        // Muestra el mensaje de carrito vacío
-        carritoVacio.style.display = "flex";
-      });
-      
-      // Redirige al pulsar "Seguir comprando" (en ambas vistas) a la página principal
-      btnSeguirComprando.addEventListener("click", function() {
-        window.location.href = "index.html";
-      });
-      btnSeguirComprandoVacio.addEventListener("click", function() {
-        window.location.href = "index.html";
-      });
-      
-      // Redirige al pulsar "Comprar" a la página compra.html
-      btnComprar.addEventListener("click", function() {
-        window.location.href = "compra.html";
+    document.addEventListener('DOMContentLoaded', () => {
+      const p = new URLSearchParams(window.location.search);
+      const tipo = p.get('tipo');
+      const charm = p.get('charm');
+      const cont = document.getElementById('opcionesColores');
+
+      let colores = [];
+      if (tipo === 'hilo') colores = ['rojo','negro'];
+      else colores = ['negro'];
+
+      colores.forEach(color => {
+        let imgSrc = 'imagenes/tejida_verde.png';
+        if (tipo === 'hilo') {
+          if (color === 'rojo')  imgSrc = 'imagenes/projo.png';
+          if (color === 'negro') imgSrc = 'imagenes/pnegro.png';
+        } else {
+          if (color === 'negro') imgSrc = 'imagenes/pnegrocuero.png';
+        }
+
+        const a = document.createElement('a');
+        a.className = 'opcion';
+        a.innerHTML = `
+          <img src="${imgSrc}" alt="${color}">
+          <h3>${color}</h3>
+        `;
+        a.href = `charms_color.html?tipo=${tipo}&charm=${charm}&color=${color}`;
+        cont.appendChild(a);
       });
     });
   </script>

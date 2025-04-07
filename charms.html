@@ -28,29 +28,6 @@
     <div class="opciones" id="opcionesCharms"></div>
   </section>
 
-  <script>
-    function toggleMenu(){ document.querySelector('.nav-links').classList.toggle('active'); }
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const tipo = params.get('tipo');
-      const cont = document.getElementById('opcionesCharms');
-      const opts = tipo === 'hilo'
-        ? ['ninguno','piedras']
-        : ['ninguno','zodiaco','piedras'];
-      opts.forEach(charm => {
-        const a = document.createElement('a');
-        a.className = 'opcion';
-        a.innerHTML = `
-          <img src="imagenes/tejida_verde.png" alt="${charm}">
-          <h3>${charm}</h3>
-        `;
-        a.href = `colores.html?tipo=${tipo}&charm=${charm}`;
-        cont.appendChild(a);
-      });
-    });
-  </script>
-</body>
-</html>
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -77,40 +54,35 @@
 
   <!-- JS -->
   <script>
-    // Función para el menú hamburguesa
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('active');
-    }
+    function toggleMenu(){ document.querySelector('.nav-links').classList.toggle('active'); }
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const tipo = params.get('tipo');
+      const cont = document.getElementById('opcionesCharms');
+      const opts = tipo === 'hilo'
+        ? ['ninguno','piedras']
+        : ['ninguno','zodiaco','piedras'];
 
-    // Esperamos a que se cargue el DOM
-    document.addEventListener("DOMContentLoaded", function() {
-      const btnEliminar = document.querySelector(".btn-eliminar");
-      const productos = document.getElementById("productos");
-      const carritoVacio = document.getElementById("carritoVacio");
-      const btnSeguirComprando = document.getElementById("seguirComprando");
-      const btnSeguirComprandoVacio = document.getElementById("seguirComprandoVacio");
-      const btnComprar = document.getElementById("comprar");
-      
-      // Eliminar producto y mostrar carrito vacío
-      btnEliminar.addEventListener("click", function() {
-        // Elimina el contenedor de productos
-        productos.style.display = "none";
-        // Muestra el mensaje de carrito vacío
-        carritoVacio.style.display = "flex";
-      });
-      
-      // Redirige al pulsar "Seguir comprando" (en ambas vistas) a la página principal
-      btnSeguirComprando.addEventListener("click", function() {
-        window.location.href = "index.html";
-      });
-      btnSeguirComprandoVacio.addEventListener("click", function() {
-        window.location.href = "index.html";
-      });
-      
-      // Redirige al pulsar "Comprar" a la página compra.html
-      btnComprar.addEventListener("click", function() {
-        window.location.href = "compra.html";
+      opts.forEach(charm => {
+        let imgSrc = 'imagenes/tejida_verde.png';
+        // asignar imágenes específicas
+        if (tipo === 'hilo') {
+          if (charm === 'ninguno')     imgSrc = 'imagenes/pninguno_rojo.png';
+          else if (charm === 'piedras') imgSrc = 'imagenes/ppiedras.png';
+        } else {
+          if (charm === 'ninguno')     imgSrc = 'imagenes/pninguno_negro.png';
+          else if (charm === 'zodiaco') imgSrc = 'imagenes/pzodiaco.png';
+          else if (charm === 'piedras') imgSrc = 'imagenes/ppiedras.png';
+        }
+
+        const a = document.createElement('a');
+        a.className = 'opcion';
+        a.innerHTML = `
+          <img src="${imgSrc}" alt="${charm}">
+          <h3>${charm}</h3>
+        `;
+        a.href = `colores.html?tipo=${tipo}&charm=${charm}`;
+        cont.appendChild(a);
       });
     });
   </script>
