@@ -9,42 +9,30 @@
 </head>
 <body>
 
-   <!-- Contenedor del menú -->
-   <nav class="menu">
+  <!-- Menú -->
+  <nav class="menu">
     <a href="index.html" class="logo">
-        <img src="imagenes/logo.png" alt="Logo">
+      <img src="imagenes/logo.png" alt="Logo">
     </a>
-
-    <!-- Menú hamburguesa -->
-    <div class="hamburger" onclick="toggleMenu()">
-        ☰
-    </div>
-
-    <!-- Enlaces de navegación -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <ul class="nav-links">
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="cuero.html">Cuero</a></li>
-        <li><a href="tejido.html">Tejido</a></li>
-        <li><a href="personaliza.html">Personaliza</a></li>
-        <li><a href="promociones.html">Promociones</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="cuero.html">Cuero</a></li>
+      <li><a href="tejido.html">Tejido</a></li>
+      <li><a href="personaliza.html">Personaliza</a></li>
+      <li><a href="promociones.html">Promociones</a></li>
     </ul>
-
-    <!-- Barra de búsqueda -->
     <div class="search-box">
-        <input type="text" placeholder="Buscar...">
-        <button>
-        
-            <img src="imagenes/buscar.png" alt="Buscar">
-           
-        </button>
+      <input type="text" placeholder="Buscar...">
+      <button>
+        <img src="imagenes/buscar.png" alt="Buscar">
+      </button>
     </div>
-
-    <!-- Íconos de usuario y carrito -->
     <div class="icons">
-        <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
-        <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+      <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+      <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
     </div>
-</nav>
+  </nav>
 
   <!-- Espacio en blanco -->
   <div class="espacio-menu"></div>
@@ -54,27 +42,20 @@
     <div class="producto-imagen">
       <img src="imagenes/box.png" alt="Imagen del producto" />
     </div>
-
     <div class="producto-detalles">
-      <h2>Caja misteriosa</h2>
-      <p class="descripcion">Caja misteriosa con 3 pulceras aleatorias</p>
-      <p class="precio">$20.990</p>
-
+      <h2>Producto</h2>
+      <p class="descripcion">Descripción del producto</p>
+      <p class="precio">Precio</p>
       <div class="especificaciones">
         <h3>Especificaciones:</h3>
-        <p><strong>Ancho/diámetro:</strong> 22x1cm</p>
-        <p><strong>Posee níquel:</strong> No</p>
-        <p><strong>Material:</strong> Cuero/tejido</p>
-        <p><strong>Condición:</strong> Nuevo</p>
       </div>
-
       <div class="acciones">
         <button class="boton-cantidad" onclick="decrementarCantidad()">-</button>
         <input type="number" id="cantidad" value="1" min="1" max="5" readonly />
         <button class="boton-cantidad" onclick="incrementarCantidad()">+</button>
-        <a href="carrito.html" class="agregar-carrito">Agregar al carrito 🛒</a>
+        <!-- Botón para agregar al carrito -->
+        <a href="#" class="agregar-carrito">Agregar al carrito 🛒</a>
       </div>
-
       <div class="botones">
         <a href="compra.html" class="boton-comprar">Comprar ahora</a>
         <a href="index.html" class="boton-atras">Atrás</a>
@@ -82,38 +63,201 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <!-- Contenedor principal del footer -->
     <div class="footer-container">
-        
-        <!-- Sección "Acerca" con un título y un enlace -->
-        <div class="footer-section">
-            <h3>ACERCA</h3>
-            <a href="nosotros.html">Nosotros</a>
-        </div>
-
-        <!-- Sección "Comprar" con un título y varios enlaces -->
-        <div class="footer-section">
-            <h3>COMPRAR</h3>
-            <a href="cuero.html">Cuero</a>
-            <a href="tejidas.html">Tejidas</a>
-            <a href="personalizar.html">Personalizar</a>
-        </div>
-
-        <!-- Sección "Usuario" con un título y enlaces de cuenta -->
-        <div class="footer-section">
-            <h3>USUARIO</h3>
-            <a href="mi-cuenta.html">Mi cuenta</a>
-            <a href="login.html">Login</a>
-        </div>
+      <div class="footer-section">
+        <h3>ACERCA</h3>
+        <a href="nosotros.html">Nosotros</a>
+      </div>
+      <div class="footer-section">
+        <h3>COMPRAR</h3>
+        <a href="cuero.html">Cuero</a>
+        <a href="tejido.html">Tejido</a>
+        <a href="personaliza.html">Personaliza</a>
+      </div>
+      <div class="footer-section">
+        <h3>USUARIO</h3>
+        <a href="mi_cuenta.html">Mi cuenta</a>
+        <a href="login.html">Login</a>
+      </div>
     </div>
-
-    <!-- Texto de derechos reservados en la parte inferior -->
     <div class="footer-bottom">
-        <p>© Ophira Creations. Todos los derechos reservados</p>
+      <p>© Ophira Creations. Todos los derechos reservados</p>
     </div>
+  </footer>
 
- </footer>
+  <script>
+    // Función para obtener parámetros de la URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Objeto con la información de todos los productos
+    const products = {
+      'cuero_cruz': {
+        name: 'Pulsera cuero cruz',
+        image: 'imagenes/cuero_cruz.png',
+        description: 'Pulsera de cuero con diseño de cruz, elegante y resistente.',
+        price: 'COP 18.000',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Cuero',
+          'Condición': 'Nuevo'
+        }
+      },
+      'cuero_marron': {
+        name: 'Pulsera de cuero Marron',
+        image: 'imagenes/cuero_marron.png',
+        description: 'Pulsera de cuero marrón, sofisticada y moderna.',
+        price: 'COP 25.000',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Cuero',
+          'Condición': 'Nuevo'
+        }
+      },
+      'cuero_negro': {
+        name: 'Pulsera cuero negro',
+        image: 'imagenes/cuero_negro.png',
+        description: 'Pulsera de cuero negro, con diseño minimalista.',
+        price: 'COP 25.000',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Cuero',
+          'Condición': 'Nuevo'
+        }
+      },
+      'tejida_verde': {
+        name: 'Pulsera tejida verde',
+        image: 'imagenes/tejida_verde.png',
+        description: 'Pulsera tejida en verde, fresca y vibrante.',
+        price: 'COP 30.500',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Tejido',
+          'Condición': 'Nuevo'
+        }
+      },
+      'tejida_roja': {
+        name: 'Pulsera tejida roja',
+        image: 'imagenes/tejida_roja.png',
+        description: 'Pulsera tejida en rojo, llamativa y en tendencia.',
+        price: 'COP 35.500',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Tejido',
+          'Condición': 'Nuevo'
+        }
+      },
+      'tejida_negra': {
+        name: 'Pulsera tejida negra',
+        image: 'imagenes/tejida_negra.png',
+        description: 'Pulsera tejida en negro, elegante y versátil.',
+        price: 'COP 25.500',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Tejido',
+          'Condición': 'Nuevo'
+        }
+      },
+      'promo_cuero_cruz': {
+        name: 'Pulsera cuero cruz (Promoción)',
+        image: 'imagenes/cuero_cruz.png',
+        description: 'Pulsera cuero cruz en promoción, elegante y resistente.',
+        price: 'COP 18.000',
+        discount: 'Antes: COP 20.000',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Cuero',
+          'Condición': 'Nuevo'
+        }
+      },
+      'promo_cuero_marron': {
+        name: 'Pulsera de cuero Marron (Promoción)',
+        image: 'imagenes/cuero_marron.png',
+        description: 'Pulsera de cuero marrón en promoción, sofisticada y moderna.',
+        price: 'COP 25.000',
+        discount: 'Antes: COP 30.000',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Cuero',
+          'Condición': 'Nuevo'
+        }
+      },
+      'promo_cuero_negro': {
+        name: 'Pulsera cuero negro (Promoción)',
+        image: 'imagenes/cuero_negro.png',
+        description: 'Pulsera cuero negro en promoción, con diseño minimalista.',
+        price: 'COP 28.000',
+        discount: 'Antes: COP 35.000',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Cuero',
+          'Condición': 'Nuevo'
+        }
+      },
+      'caja_misteriosa': {
+        name: 'Caja misteriosa',
+        image: 'imagenes/box.png',
+        description: 'Caja misteriosa con 3 pulseras aleatorias',
+        price: 'COP 20.990',
+        specs: {
+          'Ancho/diámetro': '22x1cm',
+          'Material': 'Cuero/Tejido',
+          'Condición': 'Nuevo'
+        }
+      }
+    };
+
+    let currentProduct = null;
+
+    // Al cargar la página, obtenemos el producto según el parámetro "id"
+    window.addEventListener('DOMContentLoaded', () => {
+      const productId = getQueryParam('id');
+      if (productId && products[productId]) {
+        const product = products[productId];
+        currentProduct = product; // Guardamos el producto actual para usarlo en "Agregar al carrito"
+        document.querySelector('.producto-imagen img').src = product.image;
+        document.querySelector('.producto-imagen img').alt = 'Imagen del producto ' + product.name;
+        document.querySelector('.producto-detalles h2').textContent = product.name;
+        document.querySelector('.producto-detalles .descripcion').textContent = product.description;
+        document.querySelector('.producto-detalles .precio').textContent = product.price;
+        
+        // Actualizamos las especificaciones
+        const specsContainer = document.querySelector('.producto-detalles .especificaciones');
+        specsContainer.innerHTML = '<h3>Especificaciones:</h3>';
+        for (let key in product.specs) {
+          const p = document.createElement('p');
+          p.innerHTML = `<strong>${key}:</strong> ${product.specs[key]}`;
+          specsContainer.appendChild(p);
+        }
+      }
+    });
+
+    // Evento para agregar al carrito
+    document.querySelector('.agregar-carrito').addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!currentProduct) return;
+      
+      // Construimos el objeto que se almacenará en el carrito (podrías incluir cantidad, etc.)
+      const productToAdd = {
+        id: getQueryParam('id'),
+        name: currentProduct.name,
+        description: currentProduct.description,
+        price: currentProduct.price,
+        image: currentProduct.image
+      };
+      
+      // Recuperamos el carrito del localStorage o inicializamos un array vacío
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(productToAdd);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      alert("Producto agregado al carrito");
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>

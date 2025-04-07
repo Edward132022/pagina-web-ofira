@@ -4,25 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrito - Ofira Creations</title>
-  
-  <!-- Importar la fuente DM Serif Display (ya se usa en index.html) -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-  
-  <!-- Enlace a tu archivo CSS principal -->
   <link rel="stylesheet" href="styles.css">
-  
-  <!-- Estilos inline para ajustar el margen superior del contenido -->
-  
 </head>
 <body>
-  <!-- Menú de navegación (mismo código que en tu index.html) -->
+  <!-- Menú de navegación (igual que en index.html) -->
   <nav class="menu">
     <a href="index.html" class="logo">
       <img src="imagenes/logo.png" alt="Logo">
     </a>
-    <div class="hamburger" onclick="toggleMenu()">
-      ☰
-    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <ul class="nav-links">
       <li><a href="nosotros.html">Nosotros</a></li>
       <li><a href="cuero.html">Cuero</a></li>
@@ -38,34 +29,14 @@
     </div>
     <div class="icons">
       <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
-      <!-- Este enlace nos lleva a carrito.html -->
       <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
     </div>
   </nav>
 
   <!-- Contenido del Carrito -->
   <section class="carrito-contenido">
-    <!-- Contenedor para el producto -->
-    <div id="productos">
-      <div class="carrito-item">
-        <img src="imagenes/tejida_verde.png" alt="Pulsera tejida verde" class="carrito-imagen">
-        <div class="carrito-descripcion">
-          <h3>Pulsera tejida verde</h3>
-          <p>Descripción: Pulsera tejida con hilos de color verde, ajustable y resistente.</p>
-          <p>Precio: $25.000</p>
-          <button class="btn-eliminar">Eliminar</button>
-        </div>
-      </div>
-      <div class="carrito-total">
-        <span>Total:</span>
-        <span id="total">$25.000</span>
-      </div>
-      <div class="carrito-botones">
-        <button class="btn-atras" id="seguirComprando">Seguir comprando</button>
-        <button class="btn-comprar" id="comprar">Comprar</button>
-      </div>
-    </div>
-
+    <!-- Contenedor para los productos del carrito se genera dinámicamente -->
+    <div id="productos"></div>
     <!-- Vista cuando el carrito está vacío -->
     <div class="carrito-vacio" id="carritoVacio">
       <h2>No hay nada en tu carrito</h2>
@@ -94,11 +65,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© Ofira Creations. Todos los derechos reservados</p>
+      <p>© Ophira Creations. Todos los derechos reservados</p>
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
     // Función para el menú hamburguesa
     function toggleMenu() {
@@ -106,34 +76,57 @@
       navLinks.classList.toggle('active');
     }
 
-    // Esperamos a que se cargue el DOM
     document.addEventListener("DOMContentLoaded", function() {
-      const btnEliminar = document.querySelector(".btn-eliminar");
-      const productos = document.getElementById("productos");
-      const carritoVacio = document.getElementById("carritoVacio");
-      const btnSeguirComprando = document.getElementById("seguirComprando");
-      const btnSeguirComprandoVacio = document.getElementById("seguirComprandoVacio");
-      const btnComprar = document.getElementById("comprar");
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const productosDiv = document.getElementById("productos");
+      const carritoVacioDiv = document.getElementById("carritoVacio");
+
+      if(cart.length === 0) {
+        productosDiv.style.display = "none";
+        carritoVacioDiv.style.display = "flex";
+      } else {
+        carritoVacioDiv.style.display = "none";
+        productosDiv.style.display = "block";
+        // Limpiar contenido previo
+        productosDiv.innerHTML = "";
+        cart.forEach(function(item, index) {
+          const carritoItem = document.createElement("div");
+          carritoItem.className = "carrito-item";
+          carritoItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="carrito-imagen">
+            <div class="carrito-descripcion">
+              <h3>${item.name}</h3>
+              <p>Descripción: ${item.description}</p>
+              <p>Precio: ${item.price}</p>
+              <button class="btn-eliminar" data-index="${index}">Eliminar</button>
+            </div>
+          `;
+          productosDiv.appendChild(carritoItem);
+        });
+        
+        // Agregar botón "Comprar todo" al final de la lista
+        const comprarTodoBtn = document.createElement("button");
+        comprarTodoBtn.className = "btn-comprar-todo";
+        comprarTodoBtn.textContent = "Comprar todo";
+        comprarTodoBtn.addEventListener("click", function() {
+          window.location.href = "compra.html";
+        });
+        productosDiv.appendChild(comprarTodoBtn);
+      }
       
-      // Eliminar producto y mostrar carrito vacío
-      btnEliminar.addEventListener("click", function() {
-        // Elimina el contenedor de productos
-        productos.style.display = "none";
-        // Muestra el mensaje de carrito vacío
-        carritoVacio.style.display = "flex";
-      });
-      
-      // Redirige al pulsar "Seguir comprando" (en ambas vistas) a la página principal
-      btnSeguirComprando.addEventListener("click", function() {
+      // Funcionalidad "Seguir comprando" (cuando el carrito está vacío)
+      document.getElementById("seguirComprandoVacio").addEventListener("click", function() {
         window.location.href = "index.html";
       });
-      btnSeguirComprandoVacio.addEventListener("click", function() {
-        window.location.href = "index.html";
-      });
       
-      // Redirige al pulsar "Comprar" a la página compra.html
-      btnComprar.addEventListener("click", function() {
-        window.location.href = "compra.html";
+      // Delegamos el evento de eliminación
+      productosDiv.addEventListener("click", function(e) {
+        if(e.target && e.target.matches("button.btn-eliminar")) {
+          let index = e.target.getAttribute("data-index");
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          location.reload();
+        }
       });
     });
   </script>

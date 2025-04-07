@@ -112,7 +112,6 @@ body {
     height: 500px;
     overflow: hidden;
     position: relative;
-    margin-top: 80px;
 }
 
 .carousel-slide {
@@ -1548,3 +1547,19 @@ main {
    font-size: 1.2rem;
    color: #333;
  }
+ .btn-comprar-todo {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5e2b97;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-comprar-todo:hover {
+  background-color: #4a1f78;
+  transform: scale(1.05);
+}
