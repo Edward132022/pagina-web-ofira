@@ -6,23 +6,57 @@
   <title>Previsualización - Ofira Creations</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body { padding-top: 120px; }
-    .prev-contenido { max-width: 800px; margin: 0 auto; padding: 2rem; text-align: center; }
-    .resumen-prev { margin-top: 2rem; border: 1px solid #ccc; border-radius: 8px; padding: 1rem; display: inline-block; text-align: left; }
-    .prev-botones { margin-top: 2rem; }
-    .prev-botones a { padding: .8rem 1.2rem; background: #a104c6; color: #fff; border-radius: 4px; text-decoration: none; margin: 0 1rem; }
-    .prev-botones a:hover { opacity: .9; }
-  </style>
+ 
 </head>
 <body>
-  <nav class="menu">…</nav>
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor del menú -->
+    <nav class="menu">
+        <a href="index.html" class="logo">
+            <img src="imagenes/logo.png" alt="Logo">
+        </a>
+
+        <!-- Menú hamburguesa -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <!-- Enlaces de navegación -->
+        <ul class="nav-links">
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="cuero.html">Cuero</a></li>
+            <li><a href="tejido.html">Tejido</a></li>
+            <li><a href="personaliza.html">Personaliza</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+        </ul>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <button>
+            
+                <img src="imagenes/buscar.png" alt="Buscar">
+               
+            </button>
+        </div>
+
+        <!-- Íconos de usuario y carrito -->
+        <div class="icons">
+            <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+            <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+        </div>
+    </nav>
+
 
   <section class="prev-contenido">
     <h1>Previsualiza tu Pulsera</h1>
     <div id="resumen" class="resumen-prev"></div>
     <div class="prev-botones">
-      <a id="btnConfirmar" href="confirmacion.html">Confirmar Compra</a>
+      <a id="btnConfirmar" href="compra.html">Confirmar Compra</a>
       <a href="personalizacion.html">Cancelar</a>
     </div>
   </section>
@@ -67,11 +101,7 @@
 
   <!-- JS -->
   <script>
-    // Función para el menú hamburguesa
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('active');
-    }
+   
 
     // Esperamos a que se cargue el DOM
     document.addEventListener("DOMContentLoaded", function() {
