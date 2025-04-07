@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofira</title>
+
+    <!-- Importar la fuente DM Serif Display -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor del menú -->
+    <nav class="menu">
+        <a href="index.html" class="logo">
+            <img src="imagenes/logo.png" alt="Logo">
+        </a>
+
+        <!-- Menú hamburguesa -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <!-- Enlaces de navegación -->
+        <ul class="nav-links">
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="cuero.html">Cuero</a></li>
+            <li><a href="tejido.html">Tejido</a></li>
+            <li><a href="personaliza.html">Personaliza</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+        </ul>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <button>
+                <img src="imagenes/buscar.png" alt="Buscar">
+            </button>
+        </div>
+
+        <!-- Íconos de usuario y carrito -->
+        <div class="icons">
+            <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+            <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+        </div>
+    </nav>
+
+    <!-- Primer banner con efecto y enlace -->
+    <div class="banner" onclick="irAper()">
+        <div class="slide" style="background-image: url('imagenes/personaliza.png');">
+            <div class="overlay">
+                <h2>Personaliza</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <h2 class="titulo-disponibles">¡Personaliza Fácil!</h2>
+        <section class="productos-grid">
+        </section>
+    </main>
+
+    <!-- NUEVA SECCIÓN: Imagen a la izquierda y texto a la derecha -->
+<section class="info-personaliza">
+    <div class="info-container">
+      <div class="info-image">
+        <!-- Ajusta la ruta de la imagen según tu carpeta -->
+        <img src="imagenes/personaliza_facil.png" alt="Pulseras personalizadas">
+      </div>
+      <div class="info-text">
+        <h2>¡Diseña tu pulsera única con Ophira Creations!</h2>
+        <p><strong>1.</strong> Elige la base que más te guste.</p>
+        <p><strong>2.</strong> Decide si quieres charms o no; ¡todo está a tu disposición!</p>
+        <p><strong>3.</strong> Escoge el color perfecto para tu pulsera.</p>
+        <p class="final-line">¡Y listo! En pocos pasos tendrás una pulsera única y totalmente personalizada.</p>
+        <!-- Botón para ir a la personalización directa -->
+        <a href="personalizacion.html" class="btn-personaliza">Personaliza Ahora</a>
+      </div>
+    </div>
+  </section>
+  <!-- Fin de la NUEVA SECCIÓN -->
+  
+    <footer>
+        <!-- Contenedor principal del footer -->
+        <div class="footer-container">
+            <!-- Sección "Acerca" -->
+            <div class="footer-section">
+                <h3>ACERCA</h3>
+                <a href="nosotros.html">Nosotros</a>
+            </div>
+            <!-- Sección "Comprar" -->
+            <div class="footer-section">
+                <h3>COMPRAR</h3>
+                <a href="cuero.html">Cuero</a>
+                <a href="tejidas.html">Tejidas</a>
+                <a href="personalizar.html">Personalizar</a>
+            </div>
+            <!-- Sección "Usuario" -->
+            <div class="footer-section">
+                <h3>USUARIO</h3>
+                <a href="mi-cuenta.html">Mi cuenta</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+        <!-- Derechos reservados -->
+        <div class="footer-bottom">
+            <p>© Ophira Creations. Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>

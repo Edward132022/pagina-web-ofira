@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito - Ofira Creations</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Menú de navegación (igual que en index.html) -->
+  <nav class="menu">
+    <a href="index.html" class="logo">
+      <img src="imagenes/logo.png" alt="Logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="cuero.html">Cuero</a></li>
+      <li><a href="tejido.html">Tejido</a></li>
+      <li><a href="personaliza.html">Personaliza</a></li>
+      <li><a href="promociones.html">Promociones</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar...">
+      <button>
+        <img src="imagenes/buscar.png" alt="Buscar">
+      </button>
+    </div>
+    <div class="icons">
+      <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+      <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+    </div>
+  </nav>
+
+  <!-- Contenido del Carrito -->
+  <section class="carrito-contenido">
+    <!-- Contenedor para los productos del carrito se genera dinámicamente -->
+    <div id="productos"></div>
+    <!-- Vista cuando el carrito está vacío -->
+    <div class="carrito-vacio" id="carritoVacio">
+      <h2>No hay nada en tu carrito</h2>
+      <p class="total">$0</p>
+      <button class="btn-atras" id="seguirComprandoVacio">Seguir comprando</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ACERCA</h3>
+        <a href="nosotros.html">Nosotros</a>
+      </div>
+      <div class="footer-section">
+        <h3>COMPRAR</h3>
+        <a href="cuero.html">Cuero</a>
+        <a href="tejido.html">Tejidos</a>
+        <a href="personaliza.html">Personaliza</a>
+      </div>
+      <div class="footer-section">
+        <h3>USUARIO</h3>
+        <a href="mi_cuenta.html">Mi cuenta</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Ophira Creations. Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // Función para el menú hamburguesa
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const productosDiv = document.getElementById("productos");
+      const carritoVacioDiv = document.getElementById("carritoVacio");
+
+      if(cart.length === 0) {
+        productosDiv.style.display = "none";
+        carritoVacioDiv.style.display = "flex";
+      } else {
+        carritoVacioDiv.style.display = "none";
+        productosDiv.style.display = "block";
+        // Limpiar contenido previo
+        productosDiv.innerHTML = "";
+        cart.forEach(function(item, index) {
+          const carritoItem = document.createElement("div");
+          carritoItem.className = "carrito-item";
+          carritoItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="carrito-imagen">
+            <div class="carrito-descripcion">
+              <h3>${item.name}</h3>
+              <p>Descripción: ${item.description}</p>
+              <p>Precio: ${item.price}</p>
+              <button class="btn-eliminar" data-index="${index}">Eliminar</button>
+            </div>
+          `;
+          productosDiv.appendChild(carritoItem);
+        });
+        
+        // Agregar botón "Comprar todo" al final de la lista
+        const comprarTodoBtn = document.createElement("button");
+        comprarTodoBtn.className = "btn-comprar-todo";
+        comprarTodoBtn.textContent = "Comprar todo";
+        comprarTodoBtn.addEventListener("click", function() {
+          window.location.href = "compra.html";
+        });
+        productosDiv.appendChild(comprarTodoBtn);
+      }
+      
+      // Funcionalidad "Seguir comprando" (cuando el carrito está vacío)
+      document.getElementById("seguirComprandoVacio").addEventListener("click", function() {
+        window.location.href = "index.html";
+      });
+      
+      // Delegamos el evento de eliminación
+      productosDiv.addEventListener("click", function(e) {
+        if(e.target && e.target.matches("button.btn-eliminar")) {
+          let index = e.target.getAttribute("data-index");
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          location.reload();
+        }
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -25,7 +25,7 @@ function cambiarImagen() {
 }
 
 // Iniciar carrusel automático
-setInterval(cambiarImagen, 5000);
+setInterval(cambiarImagen, 3000);
 
 // Función para el menú hamburguesa
 function toggleMenu() {
@@ -40,8 +40,6 @@ const totalItems = items.length;
 
 // Función para actualizar el carrusel
 function updateCarousel() {
-    const centerIndex = (currentIndex + Math.floor(totalItems / 2)) % totalItems;
-    
     items.forEach((item, index) => {
         item.classList.remove("active");
         let newIndex = (index - currentIndex + totalItems) % totalItems;
@@ -63,3 +61,55 @@ function moveCarousel(direction) {
 
 // Iniciar el carrusel en el centro
 updateCarousel();
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Página cargada con éxito.");
+
+    // Seleccionar todos los productos
+    const productos = document.querySelectorAll(".producto");
+
+    // Aplicar animación de entrada progresiva
+    productos.forEach((producto, index) => {
+        setTimeout(() => {
+            producto.style.opacity = "1";
+            producto.style.transform = "translateY(0)";
+        }, index * 200); // Retraso progresivo en la animación
+    });
+});
+// Función para redirigir a otra página
+function irApromo() {
+    window.location.href = "promociones.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irAcueros() {
+    window.location.href = "cuero.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irAus() {
+    window.location.href = "nosotros.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irATej() {
+    window.location.href = "tejido.html"; // Reemplázalo con tu URL destino
+}
+// Función para redirigir a otra página
+function irAPer() {
+    window.location.href = "personaliza.html"; // Reemplázalo con tu URL destino
+}
+function irAbox() {
+    window.location.href = "preview_box.html"; // Reemplázalo con tu URL destino
+}
+function incrementarCantidad() {
+    const input = document.getElementById('cantidad');
+    if (parseInt(input.value) < 5) {
+        input.value = parseInt(input.value) + 1;
+    }
+}
+
+function decrementarCantidad() {
+    const input = document.getElementById('cantidad');
+    if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+    }
+}
+

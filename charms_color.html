@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tipo de Charm - Ofira Creations</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+  
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Contenedor del menú -->
+    <nav class="menu">
+        <a href="index.html" class="logo">
+            <img src="imagenes/logo.png" alt="Logo">
+        </a>
+
+        <!-- Menú hamburguesa -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <!-- Enlaces de navegación -->
+        <ul class="nav-links">
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="cuero.html">Cuero</a></li>
+            <li><a href="tejido.html">Tejido</a></li>
+            <li><a href="personaliza.html">Personaliza</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+        </ul>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <button>
+            
+                <img src="imagenes/buscar.png" alt="Buscar">
+               
+            </button>
+        </div>
+
+        <!-- Íconos de usuario y carrito -->
+        <div class="icons">
+            <a href="mi_cuenta.html"><img src="imagenes/user.png" alt="Usuario"></a>
+            <a href="carrito.html"><img src="imagenes/cart.png" alt="Carrito"></a>
+        </div>
+    </nav>
+
+  <section class="charms-color-contenido">
+    <h1>Elige el Tipo de Charm</h1>
+    <div class="opciones" id="opcionesTipos"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ACERCA</h3>
+        <a href="nosotros.html">Nosotros</a>
+      </div>
+      <div class="footer-section">
+        <h3>COMPRAR</h3>
+        <a href="cuero.html">Cuero</a>
+        <a href="tejido.html">Tejidos</a>
+        <a href="personaliza.html">Personaliza</a>
+      </div>
+      <div class="footer-section">
+        <h3>USUARIO</h3>
+        <a href="mi_cuenta.html">Mi cuenta</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Ofira Creations. Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const p = new URLSearchParams(window.location.search);
+      const tipo = p.get('tipo');       // 'hilo' o 'cuero'
+      const charm = p.get('charm');     // 'ninguno', 'piedras', 'zodiaco'
+      const color = p.get('color');     // 'rojo' o 'negro'
+      const cont = document.getElementById('opcionesTipos');
+
+      // Si no hay charm, directo a previsualizar
+      if (charm === 'ninguno') {
+        window.location.href = `previsualizacion.html?tipo=${tipo}&charm=${charm}&color=${color}`;
+        return;
+      }
+
+      let opciones = [];
+      // Para hilo y charm='piedras'
+      if (tipo === 'hilo' && charm === 'piedras') {
+        opciones = [
+          { nombre: 'bolas doradas', img: 'imagenes/pbolas_doradas.png' },
+          { nombre: 'bolas negras',  img: 'imagenes/pbolas_negras.png' },
+          { nombre: 'bolas azules',  img: 'imagenes/pbolas_azules.png' }
+        ];
+      }
+      // Para cuero y charm='zodiaco'
+      else if (tipo === 'cuero' && charm === 'zodiaco') {
+        opciones = [
+          { nombre: 'sagitario', img: 'imagenes/psagitario.png' },
+          { nombre: 'piscis',    img: 'imagenes/ppicis.png' },
+          { nombre: 'tauro',     img: 'imagenes/ptauro.png' }
+        ];
+      }
+      // Para cuero y charm='piedras'
+      else if (tipo === 'cuero' && charm === 'piedras') {
+        opciones = [
+          { nombre: 'piedras doradas', img: 'imagenes/pbolas_semidoradas.png' },
+          { nombre: 'piedras negras',   img: 'imagenes/pbolas_negras.png' },
+          { nombre: 'piedras azules',   img: 'imagenes/pbolas_azules.png' }
+        ];
+      }
+
+      // Renderizamos botones
+      opciones.forEach(opt => {
+        const a = document.createElement('a');
+        a.className = 'opcion';
+        a.innerHTML = `
+          <img src="${opt.img}" alt="${opt.nombre}">
+          <h3>${opt.nombre}</h3>
+        `;
+        a.href = `previsualizacion.html?tipo=${tipo}&charm=${charm}&color=${color}&charm_color=${encodeURIComponent(opt.nombre)}`;
+        cont.appendChild(a);
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
