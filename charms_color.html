@@ -94,14 +94,14 @@
       const color = p.get('color');     // 'rojo' o 'negro'
       const cont = document.getElementById('opcionesTipos');
 
-      // Si no hay charm, saltamos a previsualizar
+      // Si no hay charm, directo a previsualizar
       if (charm === 'ninguno') {
         window.location.href = `previsualizacion.html?tipo=${tipo}&charm=${charm}&color=${color}`;
         return;
       }
 
       let opciones = [];
-      // Para hilo (tanto rojo como negro) y charm='piedras'
+      // Para hilo y charm='piedras'
       if (tipo === 'hilo' && charm === 'piedras') {
         opciones = [
           { nombre: 'bolas doradas', img: 'imagenes/pbolas_doradas.png' },
@@ -109,7 +109,7 @@
           { nombre: 'bolas azules',  img: 'imagenes/pbolas_azules.png' }
         ];
       }
-      // Para cuero y charm='zodiaco' (solo negro)
+      // Para cuero y charm='zodiaco'
       else if (tipo === 'cuero' && charm === 'zodiaco') {
         opciones = [
           { nombre: 'sagitario', img: 'imagenes/psagitario.png' },
@@ -117,7 +117,7 @@
           { nombre: 'tauro',     img: 'imagenes/ptauro.png' }
         ];
       }
-      // Para cuero y charm='piedras' (solo negro)
+      // Para cuero y charm='piedras'
       else if (tipo === 'cuero' && charm === 'piedras') {
         opciones = [
           { nombre: 'piedras doradas', img: 'imagenes/pbolas_semidoradas.png' },
