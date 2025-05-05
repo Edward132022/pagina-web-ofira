@@ -25,7 +25,7 @@ function cambiarImagen() {
 }
 
 // Iniciar carrusel automático
-setInterval(cambiarImagen, 5000);
+setInterval(cambiarImagen, 3000);
 
 // Función para el menú hamburguesa
 function toggleMenu() {
