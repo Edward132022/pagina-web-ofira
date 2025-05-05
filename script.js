@@ -112,4 +112,3 @@ function decrementarCantidad() {
         input.value = parseInt(input.value) - 1;
     }
 }
-
