@@ -7,6 +7,34 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("mi_cuenta.php", { credentials: "same-origin" })
+      .then(res => res.json())
+      .then(data => {
+        const cont = document.getElementById("contenidoCuenta");
+
+        if (data.loggedIn) {
+          // Inyecta saludo conservando TODO tu HTML original
+          cont.innerHTML = `
+            <h2>Bienvenid@, ${data.nombre}</h2>
+            <p>Esta es tu área de usuario. Puedes continuar navegando o cerrar sesión.</p>
+            <form method="post" action="logout.php">
+              <button type="submit">Cerrar sesión</button>
+            </form>
+          `;
+        } else {
+          // No logueado: mostramos mensaje de login
+          cont.innerHTML = `
+            <h2>No has iniciado sesión</h2>
+            <p>Por favor <a href="login.html">inicia sesión aquí</a> para acceder a tu cuenta.</p>
+          `;
+        }
+      })
+      .catch(err => console.error("Error al leer sesión:", err));
+  });
+</script>
+
 <body>
   <!-- Barra de navegación -->
   <nav class="menu">
